@@ -23,12 +23,15 @@ export const GifGrid = ({category}) => {
     return (
         <>
             <h3>{category}</h3>
-            <div>
+            <div className='card-grid'>
                 {
                     //Desestructuracion de images
-                    images.map( ({id,title}) => (
-                        // <GifCardItem/>
-                        console.log(id)
+                    images.map( (image) => (
+                        <GifCardItem 
+                            key={image.id}
+                            // Se envian todas las propiedades que contenga el array como props
+                            {...image}
+                        />
                     ))  
                 }
             </div>
